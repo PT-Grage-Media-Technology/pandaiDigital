@@ -32,7 +32,7 @@
                         }
                     @endphp
                     <a href="{{ $href }}" class="snap-always snap-center flex-shrink-0">
-                        <img src="{{ assets('foto_banner/' . $link->gambar) }}" alt="{{ $link->judul }}"
+                        <img src="{{ asset('foto_banner/' . $link->gambar) }}" alt="{{ $link->judul }}"
                             class="max-sm:h-[89px] lg:h-80 md:h-52 w-auto mx-auto lg:rounded-2xl md:rounded-xl max-sm:rounded-lg">
                     </a>
                 @endif
