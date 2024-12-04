@@ -256,7 +256,7 @@
                             <div
                                 class="bg-white p-4 rounded-lg shadow-sm transition-transform duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg">
                                 <div class="w-full aspect-w-2 aspect-h-2">
-                                    <img loading="lazy" src="{{ url('./kategori_program/' . $category->gambar) }}"
+                                    <img loading="lazy" src="{{ asset('./kategori_program/' . $category->gambar) }}"
                                         alt="{{ $category->nama_kategori }}"
                                         class="w-full h-full object-contain rounded-lg mb-2">
                                 </div>
@@ -452,7 +452,7 @@
                 <h2 class="text-2xl font-bold mb-2 text-center">Portfolio Member Pandai Digital</h2>
                 <p class="mb-4 text-gray-600 text-center">Bangun Portfoliomu dengan belajar secara praktikal dan direct di
                     Pandai Digital.</p>
-                    
+
 
                 <div class="flex overflow-x-auto space-x-4 pb-4 no-scrollbar">
                     @foreach($portos as $porto)
