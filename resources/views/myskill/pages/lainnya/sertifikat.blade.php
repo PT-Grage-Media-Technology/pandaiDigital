@@ -143,7 +143,10 @@
 
       .signature-box img {
         width: 85px;
-        margin-bottom: 5px;
+        height: 85px; 
+        object-fit: contain; 
+        margin-bottom: 5px; 
+        display: block; 
       }
 
       .signature-line {

@@ -101,37 +101,37 @@
             </style>
 
             <div class="w-full h-full ">
-                <h2 class="text-2xl font-semibold text-left mr-4 ml-4 md:ml-6 max-sm:ml-6 lg:mt-4 md:mt-2 max-sm:mt-8">
-                    Lanjut Belajar</h2>
-                <p class="text-sm text-left mb-4 ml-4 md:ml-6 ">Yuk lanjutkan progress belajarmu untuk segera dapatkan
-                    sertifikat!</p>
+                <!--<h2 class="text-2xl font-semibold text-left mr-4 ml-4 md:ml-6 max-sm:ml-6 lg:mt-4 md:mt-2 max-sm:mt-8">-->
+                <!--    Lanjut Belajar</h2>-->
+                <!--<p class="text-sm text-left mb-4 ml-4 md:ml-6 ">Yuk lanjutkan progress belajarmu untuk segera dapatkan-->
+                <!--    sertifikat!</p>-->
 
-                <div class="flex p-4 bg-white shadow rounded-lg items-center max-sm:text-center">
+                <!--<div class="flex p-4 bg-white shadow rounded-lg items-center max-sm:text-center">-->
                     <!-- Image Placeholder -->
-                    <div class="w-32 h-32 bg-gray-200 rounded-lg"></div>
+                <!--    <div class="w-32 h-32 bg-gray-200 rounded-lg"></div>-->
 
                     <!-- Content Section -->
-                    <div class="ml-4 flex-1 pt-2 ">
-                        <h3 class="text-gray-800 font-semibold">Sepertinya Kamu Belum Mulai Belajar...</h3>
-                        <p class="text-sm text-gray-500">Yuk mulai belajar beragam materi pilihan terbaik di Pandai Digital.
-                        </p>
+                <!--    <div class="ml-4 flex-1 pt-2 ">-->
+                <!--        <h3 class="text-gray-800 font-semibold">Sepertinya Kamu Belum Mulai Belajar...</h3>-->
+                <!--        <p class="text-sm text-gray-500">Yuk mulai belajar beragam materi pilihan terbaik di Pandai Digital.-->
+                <!--        </p>-->
 
                         <!-- Progress Bar -->
-                        <div class="relative pt-2 mt-2">
-                            <div class="h-2 bg-gray-200 rounded-full">
-                                <div class="w-0 h-full bg-orange-500 rounded-full"></div>
-                            </div>
-                            <p class="text-sm text-gray-500 mt-1">0%</p>
-                        </div>
+                <!--        <div class="relative pt-2 mt-2">-->
+                <!--            <div class="h-2 bg-gray-200 rounded-full">-->
+                <!--                <div class="w-0 h-full bg-orange-500 rounded-full"></div>-->
+                <!--            </div>-->
+                <!--            <p class="text-sm text-gray-500 mt-1">0%</p>-->
+                <!--        </div>-->
                         <!-- Button moved below the progress bar -->
-                        <div class="mt-4">
-                            <button
-                                class="px-4 py-2 mb-4 bg-orange-500 text-white text-sm font-medium rounded-lg shadow hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-opacity-75">
-                                Mulai Belajar
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <!--        <div class="mt-4">-->
+                <!--            <button-->
+                <!--                class="px-4 py-2 mb-4 bg-orange-500 text-white text-sm font-medium rounded-lg shadow hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-opacity-75">-->
+                <!--                Mulai Belajar-->
+                <!--            </button>-->
+                <!--        </div>-->
+                <!--    </div>-->
+                <!--</div>-->
 
 
                 <div class="flex justify-between items-center border-b border-gray-300 mb-6 tab-container ml-4">

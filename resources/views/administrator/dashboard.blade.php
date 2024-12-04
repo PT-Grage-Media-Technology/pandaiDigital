@@ -22,48 +22,56 @@
             <h1 class="mb-4">Dashboard</h1>
             <div class="row">
                 <div class="col-xl-3 col-md-6">
-                    <div class="card bg-gradient-primary border-0">
-                        <div class="card-body d-flex align-items-center">
-                            <i class="fa fa-newspaper fa-3x text-white mr-3"></i>
-                            <div>
-                                <h5 class="text-white mb-0">BERITA</h5>
-                                <h2 class="text-white mb-0">{{ $berita['total_berita'] }}</h2>
+                    <a href="/administrator/bootcamps">
+                        <div class="card bg-gradient-primary border-0">
+                            <div class="card-body d-flex align-items-center">
+                                <i class="fa fa-newspaper fa-3x text-white mr-3"></i>
+                                <div>
+                                    <h5 class="text-white mb-0">BOOTCAMP</h5>
+                                    <h2 class="text-white mb-0">{{ $bootcamp['total_bootcamp'] }}</h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-xl-3 col-md-6">
-                    <div class="card bg-gradient-success border-0">
-                        <div class="card-body d-flex align-items-center">
-                            <i class="fa fa-file-alt fa-3x text-white mr-3"></i>
-                            <div>
-                                <h5 class="text-white mb-0">HALAMAN</h5>
-                                <h2 class="text-white mb-0">{{ $halamanbaru['total_halamanbaru'] }}</h2>
+                    <a href="/administrator/materi">
+                        <div class="card bg-gradient-success border-0">
+                            <div class="card-body d-flex align-items-center">
+                                <i class="fa fa-file-alt fa-3x text-white mr-3"></i>
+                                <div>
+                                    <h5 class="text-white mb-0">E-LEARNING</h5>
+                                    <h2 class="text-white mb-0">{{ $elearning['total_elearning'] }}</h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-xl-3 col-md-6">
-                    <div class="card bg-gradient-warning border-0">
-                        <div class="card-body d-flex align-items-center">
-                            <i class="fa fa-calendar-alt fa-3x text-white mr-3"></i>
-                            <div>
-                                <h5 class="text-white mb-0">AGENDA</h5>
-                                <h2 class="text-white mb-0">{{ $agenda['total_agenda'] }}</h2>
+                    <a href="/administrator/trainer">
+                        <div class="card bg-gradient-warning border-0">
+                            <div class="card-body d-flex align-items-center">
+                                <i class="fa fa-calendar-alt fa-3x text-white mr-3"></i>
+                                <div>
+                                    <h5 class="text-white mb-0">TRAINER</h5>
+                                    <h2 class="text-white mb-0">{{ $trainer['total_trainer'] }}</h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="col-xl-3 col-md-6">
-                    <div class="card bg-gradient-danger border-0">
-                        <div class="card-body d-flex align-items-center">
-                            <i class="fa fa-users fa-3x text-white mr-3"></i>
-                            <div>
-                                <h5 class="text-white mb-0">USERS</h5>
-                                <h2 class="text-white mb-0">{{ $users['total_users'] }}</h2>
+                    <a href="/administrator/manajemenuser">
+                        <div class="card bg-gradient-danger border-0">
+                            <div class="card-body d-flex align-items-center">
+                                <i class="fa fa-users fa-3x text-white mr-3"></i>
+                                <div>
+                                    <h5 class="text-white mb-0">USERS</h5>
+                                    <h2 class="text-white mb-0">{{ $users['total_users'] }}</h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
 

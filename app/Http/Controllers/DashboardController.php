@@ -7,6 +7,9 @@ use App\Models\Halamanbaru;
 use App\Models\Agenda;
 use App\Models\Manajemenmodul;
 use App\Models\User;
+use App\Models\Bootcamp;
+use App\Models\Materi;
+use App\Models\Trainer;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -21,6 +24,9 @@ class DashboardController extends Controller
     public function index()
     {
         $berita['total_berita'] = Berita::count();
+        $bootcamp['total_bootcamp'] = Bootcamp::count();
+        $elearning['total_elearning'] = Materi::count();
+        $trainer['total_trainer'] = Trainer::count();
         $halamanbaru['total_halamanbaru'] = Halamanbaru::count();
         $agenda['total_agenda'] = Agenda::count();
         $users['total_users'] = User::count();
@@ -35,7 +41,7 @@ class DashboardController extends Controller
             $manajemenmodul = Manajemenmodul::all();
 
             $view = 'administrator.dashboard';
-            return view($view, compact('manajemenmodul', 'berita', 'halamanbaru', 'agenda', 'users'));
+            return view($view, compact('manajemenmodul', 'berita', 'halamanbaru', 'agenda', 'users', 'bootcamp', 'elearning', 'trainer'));
         } elseif ($user->level === 'pengajar') {
             $users['pengajar'] = $user;
             $view = 'pengajar.dashpengajar';
