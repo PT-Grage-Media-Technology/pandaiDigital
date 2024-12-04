@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" href="{{ 'https://grageacademy.online/foto_identitas/' . $identitas->favicon }}">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
-    <link rel="stylesheet" href="{{ url('assets/css/sweetalert2.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('assets/css/sweetalert2.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url('assets/vendor/nucleo/css/nucleo.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}"
         type="text/css">
@@ -67,7 +67,7 @@
                                 <ul class="nav nav-sm flex-column">
                                     @php
                                         $UserModul = new \App\Models\UserModul();
-                                       
+
                                         $cekMateri = $UserModul->umenu_akses('materi', session('id_session'));
                                         $cekPengumpulantugas = $UserModul->umenu_akses('pengumpulantugas', session('id_session'));
                                     @endphp
@@ -135,7 +135,7 @@
         <nav class="navbar navbar-top navbar-expand navbar-light bg-secondary border-bottom">
             <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                
+
                 <div id="search-results" class="dropdown-menu dropdown-menu-right" style="display: none;"></div>
                     <ul class="navbar-nav align-items-center ml-md-auto">
                         <li class="nav-item d-xl-none">
@@ -228,7 +228,7 @@
     {{-- <script src="{{ url('assets/js/ckeditor.js') }}"></script> --}}
     {{-- <script src="https://cdn.ckeditor.com/ckeditor5/43.0.0/ckeditor5.js"></script> --}}
     {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
-    <script src="{{ url('assets/js/sweetalert2.js') }}"></script>
+    <script src="{{ asset('assets/js/sweetalert2.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/autonumeric/4.10.5/autoNumeric.min.js"></script>
     <script src="{{ url('assets/vendor/js-cookie/js.cookie.js') }}"></script>
     <script src="{{ url('assets/js/argon.js') }}"></script>
