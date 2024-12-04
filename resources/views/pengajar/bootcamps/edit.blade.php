@@ -30,7 +30,7 @@
                                     <th style="padding: 5px;">Thumbnail saat ini:</th>
                                     <td style="padding: 5px;">
                                         <div class="d-flex align-items-center">
-                                            <img id="preview" src="{{ url('thumbnail_bootcamp/'.$bootcamps->thumbnail) }}" alt="Preview" style="max-width: 100px; margin-top: 5px;" class="mr-3">
+                                            <img id="preview" src="{{ asset('thumbnail_bootcamp/'.$bootcamps->thumbnail) }}" alt="Preview" style="max-width: 100px; margin-top: 5px;" class="mr-3">
                                             <div class="flex-grow-1">
                                                 <input type="file" class="form-control" onchange="previewImage(event)" name="thumbnail" id="thumbnail">
                                                 <small class="form-text text-muted">Biarkan kosong jika tidak ingin mengubah gambar.</small>

@@ -81,7 +81,7 @@
                                             <td>
                                                 @if ($materi->thumbnail)
                                                     <img style="width: 80px"
-                                                        src="{{ url('thumbnail/' . $materi->thumbnail) }}">
+                                                        src="{{ asset('thumbnail/' . $materi->thumbnail) }}">
                                                 @else
                                                     <p>No Image</p>
                                                 @endif

@@ -32,7 +32,7 @@
                                 <th style="padding: 5px;">File Tugas</th>
                                 <td style="padding: 5px;">
                                     <div class="d-flex align-items-center">
-                                        <img id="preview" src="{{ url('files_pengumpulantugas_bootcamps/'.$pengumpulantugasbootcamps->file) }}" alt="Preview" style="max-width: 100px; margin-top: 5px;" class="mr-3">
+                                        <img id="preview" src="{{ asset('files_pengumpulantugas_bootcamps/'.$pengumpulantugasbootcamps->file) }}" alt="Preview" style="max-width: 100px; margin-top: 5px;" class="mr-3">
                                         <div class="flex-grow-1">
                                             <input type="file" class="form-control" name="file" id="file" disabled> <!-- Input file disabled -->
                                             <small class="form-text text-muted">Anda tidak dapat mengubah file ini.</small>

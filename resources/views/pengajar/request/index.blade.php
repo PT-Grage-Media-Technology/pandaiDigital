@@ -68,7 +68,7 @@
                                             <td class="text-center">
                                                 @if ($permission->bootcamp->thumbnail)
                                                     <img class="img-fluid"
-                                                        src="{{ url('thumbnail_bootcamp/' . $permission->bootcamp->thumbnail) }}">
+                                                        src="{{ asset('thumbnail_bootcamp/' . $permission->bootcamp->thumbnail) }}">
                                                 @else
                                                     <p>No Image</p>
                                                 @endif
@@ -101,7 +101,7 @@
                                                              <i class="fas fa-check"></i>
                                                         </a>
                                                         <a href="{{ route('pengajar.invite.cancel', $permission->id_permision) }}"
-                                                            class="btn btn-danger" title="Decline Invitation"> 
+                                                            class="btn btn-danger" title="Decline Invitation">
                                                             <i class="fas fa-times"></i>
                                                         </a>
                                                     </div>
