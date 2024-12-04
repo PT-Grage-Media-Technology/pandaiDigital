@@ -1,0 +1,23 @@
+public function editBerita(Request $request){
+
+        $news = BeritaModel::find($request->id_berita);
+        $judul = $request->judul;
+        $news->sub_judul = $request->sub_judul;
+        $news->youtube = $request->youtube;
+
+        if ($news) {
+            $news->judul = $judul;
+        } else {
+            // Tangani kasus ketika $playlist adalah null
+            return redirect()->back()->with('error', 'Playlist tidak ditemukan');
+        }
+        $news->tanggal = $request->tanggal;
+        $news->status = $request->status;
+        $news->headline = $request->headline;
+        $news->aktif = $request->aktif;
+        $news->utama = $request->utama;
+
+        $news->save();
+
+        return redirect("administrator/modul-berita/berita", compact(['kategori', 'news']))->with('success', 'Playlist berhasil diperbarui');
+    }

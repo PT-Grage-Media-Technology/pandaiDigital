@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>{{ $identitas->nama_website }}</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{ asset('foto_identitas/' . $identitas->favicon)}}" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url('template/UpCons/assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url('template/UpCons/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url('template/UpCons/assets/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+  <link href="{{ url('template/UpCons/assets/vendor/aos/aos.css') }}" rel="stylesheet">
+  <link href="{{ url('template/UpCons/assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ url('template/UpCons/assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{ url('template/UpCons/assets/css/main.css') }}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: UpConstruction - v1.3.0
+  * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+  <style>
+    .navbar ul li a {
+      color: black !important;
+    }
+
+    .navbar ul li.parent-menu>a {
+      color: black !important;
+    }
+
+    .header.scrolled .navbar ul li a {
+      color: #ffc732 !important;
+    }
+
+    .header.scrolled .navbar ul li.parent-menu>a {
+      color: #ffc732 !important;
+    }
+
+    @media (max-width: 1279px) {
+      .header.scrolled .navbar ul li a {
+        color: black !important;
+      }
+
+      .header.scrolled .navbar ul li.parent-menu>a {
+        color: black !important;
+      }
+    }
+  </style>
+
+    <style>
+    .header {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 9999;
+        background-color: #ffc732;
+        transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+    }
+
+    .header.scrolled {
+        background-color: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(10px);
+    }
+
+    @media (max-width: 768px) {
+        .header.scrolled {
+            backdrop-filter: none;
+            background-color: #ffc732;
+        }
+    }
+    </style>
+</head>
+
+<body>
+    @if (Auth::check() && Auth::user()->level === 'admin')
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+      <a href="/company-profile" class="logo d-flex align-items-center">
+        <img src="{{ asset('logo/' . $logo->gambar) }}" alt="Logo">
+      </a>
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list" id="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x" id="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li class="parent-menu"><a href="{{ url('/company-profile')}}" class="active">Home</a></li>
+          @foreach($menus as $menu)
+          <li class="nav-item dropdown parent-menu">
+            <a class="dropdown-toggle nav-link" href="{{ url($menu->link) }}" id="navbarDropdown{{ $menu->id_menu }}" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none; color:black;">
+              {{ $menu->nama_menu }}
+            </a>
+            @if($menu->children->count() > 0)
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown{{ $menu->id_menu }}">
+              @foreach($menu->children as $child)
+              <li class="dropdown">
+                <a href="{{ url($child->link) }}" class="dropdown-item page-scroll dropdown-toggle" id="navbarDropdownChild{{ $child->id_menu }}" role="button" aria-expanded="false">
+                  {{ $child->nama_menu }}
+                </a>
+                @if($child->children->count() > 0)
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownChild{{ $child->id_menu }}">
+                  @foreach($child->children as $subChild)
+                  <li class="dropdown">
+                    <a href="{{ url($subChild->link) }}" class="dropdown-item page-scroll dropdown-toggle" id="navbarDropdownSubChild{{ $subChild->id_menu }}" role="button" aria-expanded="false">
+                      <i class="fa fa-chevron-right justify-content-end"></i> {{ $subChild->nama_menu }}
+                    </a>
+                    @if($subChild->children->count() > 0)
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownSubChild{{ $subChild->id_menu }}">
+                      @foreach($subSubChild->children as $subSubChild)
+                      <li>
+                        <a href="{{ $subSubChild->link }}" class="dropdown-item page-scroll">
+                          {{ $subSubChild->nama_menu }}
+                        </a>
+                      </li>
+                      @endforeach
+                    </ul>
+                    @endif
+                  </li>
+                  @endforeach
+                </ul>
+                @endif
+              </li>
+              @endforeach
+            </ul>
+            @endif
+          </li>
+          @endforeach
+          <li class="parent-menu"><a href="#contact">Contact</a></li>
+          <li class="parent-menu"><a href="{{ url('/')}}">Pandai Digital</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  @yield('content')
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="footer-content position-relative">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-info">
+              <h3>{{ $identitas->nama_website }}</h3>
+              <span class="phone"><b>No.telp</b> : {{ $identitas->no_telp }}</span>
+              <div class="text-white">
+                <b>Alamat</b> : {{ $identitas->alamat}}
+              </div>
+              <div class="text-white">
+                <b>Email</b> : {{ $identitas->email}}
+              </div>
+              <div class="social-links d-flex mt-3">
+                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="d-flex align-items-center justify-content-center"><i class="bi bi-youtube"></i></a>
+              </div>
+            </div>
+          </div><!-- End footer info column-->
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-legal text-center position-relative">
+      <div class="container">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Pandai Digital</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/ -->
+        </div>
+      </div>
+    </div>
+
+  </footer>
+  <!-- End Footer -->
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader"></div>
+
+  {{-- <script>
+    const header = document.querySelector('#header');
+    function onScroll() {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
+    window.addEventListener('scroll', onScroll);
+  </script> --}}
+
+  <script>
+    const header = document.querySelector('#header');
+    const mobileNav = document.querySelector('.mobile-nav-toggle.mobile-nav-show');
+    const navbar = document.querySelector('.navbar');
+
+    mobileNav.addEventListener('click', () => {
+        navbar.classList.toggle('mobile-nav-active');
+    });
+
+    window.addEventListener('scroll', function () {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+  </script>
+
+  <script>
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle.mobile-nav-show');
+    const mobileNavHide = document.querySelector('.mobile-nav-toggle.mobile-nav-show');
+
+    // Tampilkan menu saat ikon menu diklik
+    mobileNavToggle.addEventListener('click', function() {
+      document.body.classList.add('mobile-nav-active');
+    });
+
+    // Sembunyikan menu saat ikon close diklik
+    mobileNavHide.addEventListener('click', function() {
+      document.body.classList.remove('mobile-nav-active');
+    });
+
+    // Tambahkan event listener untuk semua tautan navbar
+    const navLinks = document.querySelectorAll('.navbar a');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        const hasDropdown = link.nextElementSibling; // Cek apakah ada submenu
+        if (!hasDropdown) {
+          document.body.classList.remove('mobile-nav-active'); // Tutup navbar jika tidak ada submenu
+        }
+      });
+    });
+  </script>
+
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url('assets/js/sweetalert2.js') }}"></script>
+  <script src="{{ url('template/UpCons/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url('template/UpCons/assets/vendor/aos/aos.js') }}"></script>
+  <script src="{{ url('template/UpCons/assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ url('template/UpCons/assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url('template/UpCons/assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ url('template/UpCons/assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+  <script src="{{ url('template/UpCons/assets/vendor/php-email-form/validate.js') }}"></script>
+
+  <!-- Di bagian bawah layout, sebelum tag </body> -->
+
+  <!-- Template Main JS File -->
+  <script src="{{ url('template/UpCons/assets/js/main.js') }}"></script>
+  
+    @else
+        <script>
+            window.onload = function() {
+                // Redirect to a specific URL
+                window.location.href = "/login";
+            };
+        </script>
+    @endif
+</body>
+
+</html>

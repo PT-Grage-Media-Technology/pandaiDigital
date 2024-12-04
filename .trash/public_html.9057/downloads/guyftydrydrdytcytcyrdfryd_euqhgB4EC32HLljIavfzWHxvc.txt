@@ -1,0 +1,95 @@
+public function tambahInfo(Request $request)
+    {
+        $gambar = $request->gambar;
+
+        $cover = $request->file("foto");
+        $coverName = $gambar . "_" . Str::random(25) . "." . $cover->getClientOriginalExtension();
+        $cover->move("./foto_info/", $coverName);
+        $tgl_posting = now();
+        $informasi = $request->info;
+        $aktif = $request->aktif ?? 'Y'; // Jika tidak ada nilai, gunakan 'Y'
+
+        InfoModel::create([
+            "gambar" => $coverName,
+            "tgl_posting" => $tgl_posting,
+            "aktif" => $aktif,
+            "info" => $informasi,
+        ]);
+
+        return redirect('administrator/modul-interaksi/sekilasinfo');
+    }
+
+    public function hapusInfo($id_sekilas)
+    {
+        $playlist = InfoModel::where('id_sekilas', $id_sekilas)->firstOrFail();
+        $playlist->delete();
+
+        return redirect('administrator/modul-interaksi/sekilasinfo')->with('success', 'Playlist berhasil dihapus');
+    }
+    public function editInfo(Request $request)
+    {
+        $info = InfoModel::find($request->id_sekilas);
+        $informasi = $request->info;
+
+        if ($info) {
+            $info->info = $informasi;
+        } else {
+            // Tangani kasus ketika $info adalah null
+            return redirect()->back()->with('error', 'Informasi tidak ditemukan');
+        }
+        $info->aktif = $request->aktif ?? 'Y';
+
+        if ($request->hasFile('gambar')) {
+            $file = $request->file('gambar');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('foto_info'), $filename);
+            $info->gambar = $filename;
+        }
+
+        $info->save();
+
+        return redirect('administrator/modul-interaksi/sekilasinfo')->with('success', 'Informasi berhasil diperbarui');
+    }
+public function tambahPoling(Request $request)
+    {
+        $pilihan = $request->pilihan;
+        $status = $request->status;
+        $aktif = $request->aktif;
+        $username = "admin"; // Pastikan ini diisi
+
+        JajakModel::create([
+            "pilihan" => $pilihan,
+            "status" => $status,
+            "aktif" => $aktif,
+            "username" => $username // Tambahkan ini ke dalam array
+        ]);
+
+        return redirect('administrator/modul-interaksi/jejakpendapat');
+    }
+
+    public function editpoling(Request $request)
+    {
+        $poll = JajakModel::find($request->id_poling);
+        $pilihan = $request->pilihan;
+        if ($poll) {
+            $poll->pilihan = $pilihan;
+        }else {
+            // Tangani kasus ketika $pilihan adalah null
+            return redirect()->back()->with('error', 'Informasi tidak ditemukan');
+        }
+
+        $poll->status = $request->status;
+        $poll->aktif = $request->aktif;
+
+        $poll->save();
+
+        return redirect('administrator/modul-interaksi/jejakpendapat');
+    }
+
+    public function hapusPoling($id_poling)
+    {
+        $poll = JajakModel::where('id_poling', $id_poling)->firstOrFail();
+        $poll->delete();
+
+        return redirect('administrator/modul-interaksi/jejakpendapat');
+    }

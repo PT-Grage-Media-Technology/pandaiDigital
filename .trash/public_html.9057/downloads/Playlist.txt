@@ -1,0 +1,78 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Support\Str;
+use App\Models\PlaylistModel;
+
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+
+class PlaylistController extends Controller
+{
+    //
+    public function tampilPlaylist(){
+        $playlists = PlaylistModel::paginate(10);
+        return view("administrator.modul-video.playlistvideo", compact(['playlists']));
+    }
+
+    public function tambahPlaylist(Request $request)
+    {
+        $jdl_playlist = $request->jdl_playlist;
+
+        $cover = $request->file("cover");
+        $coverName = $jdl_playlist."_".Str::random(25).".".$cover->getClientOriginalExtension();
+        $cover->move("./img_playlist/",$coverName);
+
+        $username = $request->username ?: 'admin';
+        $aktif = $request->aktif ?? 'Y'; // Jika tidak ada nilai, gunakan 'Y'
+
+
+        PlaylistModel::create([
+            "gbr_playlist" => $coverName,
+            "jdl_playlist" => $jdl_playlist,
+            "playlist_seo" => Str::slug($jdl_playlist),
+            "aktif" => $aktif,
+            "username" => $username,
+        ]);
+
+        session()->flash('message', 'Playlist baru berhasil ditambahkan');
+        return redirect("administrator/modul-video/playlistvideo");
+    }
+
+
+    public function editPlaylist(Request $request)
+    {
+        $playlist = PlaylistModel::find($request->id_playlist);
+        $jdl_playlist = $request->jdl_playlist;
+
+        if ($playlist) {
+            $playlist->jdl_playlist = $jdl_playlist;
+        } else {
+            // Tangani kasus ketika $playlist adalah null
+            return redirect()->back()->with('error', 'Playlist tidak ditemukan');
+        }
+        $playlist->aktif = $request->aktif;
+
+        if ($request->hasFile('gbr_playlist')) {
+            $file = $request->file('gbr_playlist');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move(public_path('img_playlist'), $filename);
+            $playlist->gbr_playlist = $filename;
+        }
+
+        $playlist->save();
+
+        return redirect("administrator/modul-video/playlistvideo/")->with('success', 'Playlist berhasil diperbarui');
+    }
+
+
+    public function hapusPlaylist($id_playlist)
+    {
+        $playlist = PlaylistModel::where('id_playlist', $id_playlist)->firstOrFail();
+        $playlist->delete();
+
+        return redirect('administrator/modul-video/playlistvideo/')->with('success', 'Playlist berhasil dihapus');
+    }
+
+}
