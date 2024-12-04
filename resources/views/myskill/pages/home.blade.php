@@ -32,7 +32,7 @@
                         }
                     @endphp
                     <a href="{{ $href }}" class="snap-always snap-center flex-shrink-0">
-                        <img src="{{ url('foto_banner/' . $link->gambar) }}" alt="{{ $link->judul }}"
+                        <img src="{{ assets('foto_banner/' . $link->gambar) }}" alt="{{ $link->judul }}"
                             class="max-sm:h-[89px] lg:h-80 md:h-52 w-auto mx-auto lg:rounded-2xl md:rounded-xl max-sm:rounded-lg">
                     </a>
                 @endif
@@ -241,7 +241,7 @@
     @foreach ($album as $album)
         <div class="snap-always snap-center flex-shrink-0 w-52 h-auto mb-4 bg-white shadow-lg border rounded-lg flex flex-col justify-between">
             <div class="flex flex-col justify-center items-center p-4">
-                <img class="w-32 h-32 object-contain rounded-lg" 
+                <img class="w-32 h-32 object-contain rounded-lg"
                     src="{{ asset('img_album/' . $album->gbr_album) }}" alt="Album Image" />
             </div>
             <p class="text-base font-semibold text-black text-center p-4 flex-grow">
@@ -257,7 +257,7 @@
     <div class="container mx-auto">
         <h3 class="text-2xl text-center font-bold py-3">Belajar Bersama Senior Operator Langsung di Kantor</h3>
         <p class="text-center text-gray-600 mb-8">Belajar langsung dari experienced professional yang mengajarkan
-            pengalaman, case study & best practices.</p> 
+            pengalaman, case study & best practices.</p>
        <!-- Scrollable Card Section -->
     <div class="flex overflow-x-auto space-x-4 px-4 md:mx-24 mt-8 no-scrollbar">
         <!-- Card -->
@@ -386,7 +386,7 @@
                 }, 300);
             }
         }
-        
+
          @if (session('status'))
             Swal.fire({
                 icon: 'success',
