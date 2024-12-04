@@ -7,13 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/logo.png') }}">
     <title>Login | Pandai Digital</title>
-    
+
     <link rel="stylesheet" href="https://rawcdn.githack.com/ArvinoDel/myskillokodinas/1b91e323bc712ff7475df2def625938c0d2cfe3b/resources/css/appskill.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url('assets/css/sweetalert2.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('assets/css/sweetalert2.min.css') }}" type="text/css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
-    <script src="{{ url('assets/js/sweetalert2.js') }}"></script>
+    <script src="{{ asset('assets/js/sweetalert2.js') }}"></script>
 </head>
 
 <body>
@@ -29,7 +29,7 @@
     }
 };
         </script>
-    
+
     @else
     <div class="flex w-full mt-20 mx-auto overflow-hidden bg-white rounded-lg lg:max-w-4xl">
         <div class="hidden lg:flex ms-10 lg:w-1/2 items-center justify-center image-container">
@@ -100,7 +100,7 @@
 
         </div>
     </div>
-    
+
      @if (session('status') === 'login-success')
         <script>
             Swal.fire({
@@ -122,7 +122,7 @@
             });
         </script>
     @endif
-    
+
     @endif
 </body>
 

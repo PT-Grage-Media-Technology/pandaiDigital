@@ -10,7 +10,7 @@
     <link rel="icon" type="image/png" href="{{ 'https://grageacademy.online/foto_identitas/' . $identitas->favicon }}">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
-    <link rel="stylesheet" href="{{ asset('assets/css/sweetalert2.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ url('assets/css/sweetalert2.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url('assets/vendor/nucleo/css/nucleo.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url('assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}"
         type="text/css">
@@ -228,7 +228,7 @@
     {{-- <script src="{{ url('assets/js/ckeditor.js') }}"></script> --}}
     {{-- <script src="https://cdn.ckeditor.com/ckeditor5/43.0.0/ckeditor5.js"></script> --}}
     {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
-    <script src="{{ asset('assets/js/sweetalert2.js') }}"></script>
+    <script src="{{ url('assets/js/sweetalert2.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/autonumeric/4.10.5/autoNumeric.min.js"></script>
     <script src="{{ url('assets/vendor/js-cookie/js.cookie.js') }}"></script>
     <script src="{{ url('assets/js/argon.js') }}"></script>
