@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Welcome Pengajar-</title>
-    <link rel="icon" type="image/png" href="{{ 'https://grageacademy.online/foto_identitas/' . $identitas->favicon }}">
+    <link rel="icon" type="image/png" href="{{ 'https://pandaidigital.id/foto_identitas/' . $identitas->favicon }}">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
     <link rel="stylesheet" href="{{ url('assets/css/sweetalert2.min.css') }}" type="text/css">
@@ -216,7 +216,7 @@
                 <div class="col-lg-12">
                     <div class="copyright-text text-center">
                         <strong>Copyright &copy; <?php echo date('Y'); ?> <a target='_BLANK'
-                                href="https://grageacademy.online/"> PT. Pandai Digital</a>.</strong> All rights
+                                href="https://pandaidigital.id/"> PT. Pandai Digital</a>.</strong> All rights
                         reserved.
                     </div>
                 </div>

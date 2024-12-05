@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Welcome Administrator-</title>
-    <link rel="icon" type="image/png" href="{{ 'https://grageacademy.online/foto_identitas/' . $identitas->favicon }}">
+    <link rel="icon" type="image/png" href="{{ 'https://pandaidigital.id/foto_identitas/' . $identitas->favicon }}">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
     <link rel="stylesheet" href="{{ url('assets/css/sweetalert2.min.css') }}" type="text/css">
@@ -320,66 +320,66 @@
                                             $cekSertifikat = $UserModul->umenu_akses('sertifikat', session('id_session'));
                                             $cekPortofolio = $UserModul->umenu_akses('portofolio', session('id_session'));
                                         @endphp
-                                    
+
                                         @if ($cekBenefit == 1 || session('level') == 'admin' || session('level') == 'user' || session('level') == 'pengajar')
                                             <li class="nav-item"><a class="nav-link" href="{{ url('administrator/benefit') }}"><i class='ni ni-diamond text-blue'></i> Benefit</a></li>
                                         @endif
-                                    
+
                                         @if ($cekBenefitbootcamp == 1 || session('level') == 'admin' || session('level') == 'user' || session('level') == 'pengajar')
                                             <li class="nav-item"><a class="nav-link" href="{{ url('administrator/benefitbootcamp') }}"><i class='ni ni-diamond text-blue'></i> Benefit Bootcamp</a></li>
                                         @endif
-                                    
+
                                         @if ($cekBerlangganan == 1 || session('level') == 'admin' || session('level') == 'user' || session('level') == 'pengajar')
                                             <li class="nav-item"><a class="nav-link" href="{{ url('administrator/berlangganan') }}"><i class='ni ni-credit-card text-blue'></i> Berlangganan</a></li>
                                         @endif
-                                    
+
                                         @if ($cekBootcamps == 1 || session('level') == 'admin' || session('level') == 'user' || session('level') == 'pengajar')
                                             <li class="nav-item"><a class="nav-link" href="{{ url('administrator/bootcamps') }}"><i class='ni ni-hat-3 text-orange'></i> Bootcamp</a></li>
                                         @endif
-                                    
+
                                         @if ($cekKategoriprogram == 1 || session('level') == 'admin' || session('level') == 'user' || session('level') == 'pengajar')
                                             <li class="nav-item"><a class="nav-link" href="{{ url('administrator/kategoriprogram') }}"><i class='ni ni-collection text-orange'></i> Kategori Program</a></li>
                                         @endif
-                                    
+
                                         @if ($cekLogo == 1 || session('level') == 'admin' || session('level') == 'user' || session('level') == 'pengajar')
                                             <li class="nav-item"><a class="nav-link" href="{{ url('administrator/metodepembayaran') }}"><i class='ni ni-image text-blue'></i> Logo Bawah</a></li>
                                         @endif
-                                    
+
                                         @if ($cekMateri == 1 || session('level') == 'admin' || session('level') == 'user' || session('level') == 'pengajar')
                                             <li class="nav-item"><a class="nav-link" href="{{ url('administrator/materi') }}"><i class='ni ni-books text-blue'></i> Materi</a></li>
                                         @endif
-                                    
+
                                         @if ($cekMetode == 1 || session('level') == 'admin' || session('level') == 'user' || session('level') == 'pengajar')
                                             <li class="nav-item"><a class="nav-link" href="{{ url('administrator/metode') }}"><i class='ni ni-ruler-pencil text-orange'></i> Metode</a></li>
                                         @endif
-                                    
+
                                         @if ($cekMitra == 1 || session('level') == 'admin' || session('level') == 'user' || session('level') == 'pengajar')
                                             <li class="nav-item"><a class="nav-link" href="{{ url('administrator/mitra') }}"><i class='ni ni-briefcase-24 text-orange'></i> Mitra</a></li>
                                         @endif
-                                    
+
                                         @if ($cekPayment == 1 || session('level') == 'admin' || session('level') == 'user' || session('level') == 'pengajar')
                                             <li class="nav-item"><a class="nav-link" href="{{ url('administrator/payment') }}"><i class='ni ni-money-coins text-blue'></i> Payment</a></li>
                                         @endif
                                         @if ($cekPopup == 1 || session('level') == 'admin' || session('level') == 'user' || session('level') == 'pengajar')
                                             <li class="nav-item"><a class="nav-link" href="{{ url('administrator/popup') }}"><i class='ni ni-settings-gear-65 text-orange'></i> Pop up</a></li>
                                         @endif
-                                    
+
                                         @if ($cekProgramcv == 1 || session('level') == 'admin' || session('level') == 'user' || session('level') == 'pengajar')
                                             <li class="nav-item"><a class="nav-link" href="{{ url('administrator/programcv') }}"><i class='ni ni-single-copy-04 text-blue'></i> Program CV</a></li>
                                         @endif
-                                    
+
                                         @if ($cekTestimoni == 1 || session('level') == 'admin' || session('level') == 'user' || session('level') == 'pengajar')
                                             <li class="nav-item"><a class="nav-link" href="{{ url('administrator/testimoni') }}"><i class='ni ni-chat-round text-blue'></i> Testimoni</a></li>
                                         @endif
-                                    
+
                                         @if ($cekTopik == 1 || session('level') == 'admin' || session('level') == 'user' || session('level') == 'pengajar')
                                             <li class="nav-item"><a class="nav-link" href="{{ url('administrator/topik') }}"><i class='ni ni-bullet-list-67 text-orange'></i> Topik</a></li>
                                         @endif
-                                    
+
                                         @if ($cekTrainer == 1 || session('level') == 'admin' || session('level') == 'user' || session('level') == 'pengajar')
                                             <li class="nav-item"><a class="nav-link" href="{{ url('administrator/trainer') }}"><i class='ni ni-single-02 text-orange'></i> Trainer</a></li>
                                         @endif
-                                        
+
                                         @if ($cekSertifikat == 1 || session('level') == 'admin' || session('level') == 'user' || session('level') == 'pengajar')
                                             <li class="nav-item"><a class="nav-link" href="{{ url('administrator/sertifikat') }}"><i class='ni ni-single-02 text-orange'></i> Sertifikat</a></li>
                                         @endif
@@ -719,7 +719,7 @@
                     <div class="col-lg-12">
                         <div class="copyright-text text-center">
                             <strong>Copyright &copy; <?php echo date('Y'); ?> <a target='_BLANK'
-                                    href="https://grageacademy.online"> PT. Pandai Digital</a>.</strong> All rights
+                                    href="https://pandaidigital.id"> PT. Pandai Digital</a>.</strong> All rights
                             reserved.
                         </div>
                     </div>
@@ -770,7 +770,7 @@
         if($('#isi_berita').length>0){
             CKEDITOR.replace('isi_berita');
         }
-        
+
         if($('#keterangan').length>0){
             CKEDITOR.replace('keterangan');
         }
@@ -778,7 +778,7 @@
         if($('#isi_deskripsi').length>0){
             CKEDITOR.replace('isi_deskripsi');
         }
-        
+
         if($('#pesan').length>0){
             CKEDITOR.replace('pesan');
         }
@@ -799,7 +799,7 @@
                 digitGroupSeparator : '.',
             });
         }
-        
+
         if($('#harga_diskon').length>0){
             new AutoNumeric('#harga_diskon', {
                 decimalPlaces: 0,
@@ -817,7 +817,7 @@
                 digitGroupSeparator : '.',
             });
         }
-        
+
         if($('#harga_berlangganan').length>0){
             new AutoNumeric('#harga_berlangganan', {
                 decimalPlaces: 0,
@@ -826,7 +826,7 @@
                 digitGroupSeparator : '.',
             });
         }
-        
+
         if($('#harga_diskonberlangganan').length>0){
             new AutoNumeric('#harga_diskonberlangganan', {
                 decimalPlaces: 0,
@@ -835,7 +835,7 @@
                 digitGroupSeparator : '.',
             });
         }
-        
+
         if($('#harga_berlanggananprogramcv').length>0){
             new AutoNumeric('#harga_berlanggananprogramcv', {
                 decimalPlaces: 0,
@@ -844,7 +844,7 @@
                 digitGroupSeparator : '.',
             });
         }
-        
+
         if($('#harga_diskonprogramcv').length>0){
             new AutoNumeric('#harga_diskonprogramcv', {
                 decimalPlaces: 0,
@@ -853,8 +853,8 @@
                 digitGroupSeparator : '.',
             });
         }
-        
-        
+
+
     </script>
 
 </body>

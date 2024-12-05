@@ -42,7 +42,7 @@ class GeneratepdfController extends Controller
                     'ttd_trainer' => $trainers->ttd,
                     'nomor' => $sertifikat->no,
                     'nilai' => $validated['nilai'],
-                    'title' => 'From grageacademy.online',
+                    'title' => 'From pandaidigital.id',
                     'body' => 'This is Certificate',
                 ];
 
@@ -65,9 +65,7 @@ class GeneratepdfController extends Controller
 
             $data["pdf"] = $pdf;
             Mail::to($data["email"])->send(new MailSertifikat($data));
-
             return redirect()->back()->with('success', 'Data Sertifikat Berhasil Diperbarui');
-
         } catch (\Exception $e) {
             Log::error('Gagal mengirim sertifikat: ' . $e->getMessage());
         }

@@ -1,7 +1,7 @@
 <nav id="navbar"
     class="sticky top-0 px-8 flex justify-between items-center bg-orange-400 z-10 w-screen transition-all duration-300 ease-in-out">
     <a class="text-2xl font-bold leading-none" href="#">
-        <img class="max-w-20 max-sm:mx-0 max-md:w-20 mx-10 h-auto my-3" src="{{ 'https://grageacademy.online/logo/' . $logo->gambar }}"  alt="logo-company">
+        <img class="max-w-20 max-sm:mx-0 max-md:w-20 mx-10 h-auto my-3" src="{{ 'https://pandaidigital.id/logo/' . $logo->gambar }}"  alt="logo-company">
         <!--<img class="max-w-20 max-sm:mx-0 max-md:w-20 mx-10 h-auto my-3" src="{{ base_path('/logo/' . $logo->gambar) }}"  alt="logo-company">-->
     </a>
     <div class="lg:hidden">
@@ -82,7 +82,7 @@
                                             <i class='bx bxs-badge-check'></i>
                                         @endif
                                 </div>
-                               
+
                             </div>
                         </div>
                         <div x-show="open" x-transition:enter="transition ease-out duration-100"
@@ -168,7 +168,7 @@
         class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white bg-opacity-75 border-r border-white border-opacity-50 shadow-lg backdrop-blur-lg">
         <div class="flex items-center mb-8">
             <a class="mr-auto text-3xl font-bold leading-none hover:text-green-600" href="#">
-                <img class="w-20" src="{{ 'https://grageacademy.online/logo/' . $logo->gambar }}" alt="logo-company">
+                <img class="w-20" src="{{ 'https://pandaidigital.id/logo/' . $logo->gambar }}" alt="logo-company">
             </a>
             <button class="navbar-close focus:outline-none">
                 <svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-green-500 "
