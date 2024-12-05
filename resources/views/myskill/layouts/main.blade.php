@@ -6,11 +6,11 @@
     <meta name="description" content="Pandai Digital adalah platform pembelajaran online yang menyediakan akses ke berbagai materi untuk pengembangan keterampilan profesional.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="icon" type="image/png" href="{{ 'https://grageacademy.online/foto_identitas/' . $identitas->favicon }}">
-    
+
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
@@ -40,8 +40,8 @@
     <div class="container" id="container">
         @yield('container')
     </div>
-     <div id="autoPopup" class="fixed bottom-0 left-0 mb-8 ml-4 hidden z-50 max-sm:z-100">
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden w-96 h-24 max-sm:w-80 ">       
+    <div id="autoPopup" class="fixed bottom-0 left-0 mb-8 ml-4 hidden z-50 max-sm:z-100">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden w-96 h-24 max-sm:w-80 ">
             <div class="px-4 max-sm:px-2 py-2 flex flex-row items-center justify-between" id="popupContent">
                 <!-- Konten pesan pop-up akan dimasukkan secara dinamis oleh JavaScript -->
                 <p class="text-base text-gray-800 mt-4 font-semibold">
@@ -55,19 +55,19 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Ambil data pesan dari Laravel dengan Blade (dalam format JSON)
             let popups = @json($popups);
-    
+
             let popupInterval = 90000; // 1.30 menit
             let lastPopupTimeKey = 'lastPopupTime'; // Key untuk menyimpan waktu terakhir pop-up muncul
-    
+
             function showPopup() {
                 if (popups.length === 0) {
                     console.log('Tidak ada pesan pop-up yang tersedia.');
                     return;
                 }
-    
+
                 // Pilih pesan acak dari data popups
                 let randomPopup = popups[Math.floor(Math.random() * popups.length)];
-    
+
                 // Masukkan konten dinamis ke dalam pop-up
                 document.getElementById('popupContent').innerHTML = `
                    <div class="flex items-start justify-between p-2 bg-white rounded-lg">
@@ -82,7 +82,7 @@
                             </div>
                     </div>
                 `;
-    
+
                 // Tampilkan pop-up dengan efek slide-in dari kiri
                 let popupElement = document.getElementById('autoPopup');
                 popupElement.classList.remove('hidden');
@@ -93,7 +93,7 @@
                     popupElement.style.opacity = 1;
                     popupElement.style.transform = 'translateX(0)';
                 }, 10);
-    
+
                 // Sembunyikan pop-up setelah 5 detik
                 setTimeout(() => {
                     popupElement.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
@@ -103,11 +103,11 @@
                         popupElement.classList.add('hidden');
                     }, 500);
                 }, 5000);
-    
+
                 // Simpan waktu pop-up terakhir kali muncul ke localStorage
                 localStorage.setItem(lastPopupTimeKey, Date.now().toString());
             }
-    
+
             function closePopup() {
                 // Sembunyikan pop-up dengan efek slide-out ke kiri
                 let popupElement = document.getElementById('autoPopup');
@@ -118,11 +118,11 @@
                     popupElement.classList.add('hidden');
                 }, 500);
             }
-    
+
             // Cek waktu terakhir kali pop-up muncul
             let lastPopupTime = localStorage.getItem(lastPopupTimeKey);
             let currentTime = Date.now();
-    
+
             // Jika belum ada data waktu terakhir atau sudah lebih dari 2.30 menit, tampilkan pop-up
             if (!lastPopupTime || currentTime - lastPopupTime >= popupInterval) {
                 showPopup();
@@ -131,10 +131,10 @@
                 let remainingTime = popupInterval - (currentTime - lastPopupTime);
                 setTimeout(showPopup, remainingTime);
             }
-    
+
             // Tampilkan pop-up secara berkala sesuai interval
             setInterval(showPopup, popupInterval);
-    
+
             // Event listener untuk menutup pop-up
             document.getElementById('closePopup').addEventListener('click', closePopup);
         });
@@ -155,13 +155,13 @@
     </a>
 
 
-         <script src="https://rawcdn.githack.com/ArvinoDel/myskillokodinas/733dfee1387648dbfc9b598c1c21f8bc217ecb12/public/assets/js/sweetalert2.js"
+    <script src="https://rawcdn.githack.com/ArvinoDel/myskillokodinas/733dfee1387648dbfc9b598c1c21f8bc217ecb12/public/assets/js/sweetalert2.js"
         defer></script>
-    
-      <script src="   https://rawcdn.githack.com/ArvinoDel/myskillokodinas/733dfee1387648dbfc9b598c1c21f8bc217ecb12/public/assets/js/jquery.min.js"
+
+    <script src="   https://rawcdn.githack.com/ArvinoDel/myskillokodinas/733dfee1387648dbfc9b598c1c21f8bc217ecb12/public/assets/js/jquery.min.js"
         defer></script>
-    
- 
+
+
     <script src="https://rawcdn.githack.com/ArvinoDel/MySkill/db1485d305b176ef2fc16baac98bcef23eb790fd/resources/js/app.js"
         defer></script>
     <script
@@ -175,8 +175,12 @@
         defer></script>
 
     <script>
-    document.addEventListener('touchstart', handler, { passive: true });
-document.addEventListener('wheel', handler, { passive: true });
+        document.addEventListener('touchstart', handler, {
+            passive: true
+        });
+        document.addEventListener('wheel', handler, {
+            passive: true
+        });
 
         document.addEventListener("DOMContentLoaded", function() {
             const images = document.querySelectorAll('img');
@@ -192,14 +196,15 @@ document.addEventListener('wheel', handler, { passive: true });
     </script>
 
     @if (session('error'))
-        <script>
-            Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: '{{ session('error') }}',
-                timer: 3000,
-            });
-        </script>
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: '{{ session('
+            error ') }}',
+            timer: 3000,
+        });
+    </script>
     @endif
 
 </body>

@@ -607,13 +607,13 @@
             <div class="mx-auto">
                 <p class="text-4xl font-bold w-4/5 ml-4">E-learning & Training Untuk Perusahaan</p>
                 <br>
-                <p class="w-4/5 ml-4">Miliki akses ratusan konten elearning MySkill serta dukungan corporate training untuk
+                <p class="w-4/5 ml-4">Miliki akses ratusan konten elearning Pandai Digital serta dukungan corporate training untuk
                     perusahaan.
                     Miliki juga berbagai fitur khusus untuk mendorong employee performance and development.</p>
                 <br>
-                <a href="/corporate-service" type="button"
-                    class="ml-4 focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-4 py-3 me-2 mb-2 dark:focus:ring-yellow-900">Hubungi
-                    Tim MySkill</a>
+                <a href="/e-learning" type="button"
+                class="ml-4 focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-4 py-3 me-2 mb-2 dark:focus:ring-yellow-900">Hubungi
+                Tim Pandai Digital</a>
             </div>
 
         </section>
