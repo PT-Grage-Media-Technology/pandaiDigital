@@ -487,9 +487,9 @@
                 perusahaan.
                 Miliki juga berbagai fitur khusus untuk mendorong employee performance and development.</p>
             <br>
-            <a href="/corporate-service" type="button"
+            <!-- <a href="/corporate-service" type="button"
                 class="ml-4 focus:outline-none text-black bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-4 py-3 me-2 mb-2 dark:focus:ring-yellow-900">Hubungi
-                Tim Pandai Digital</a>
+                Tim Pandai Digital</a> -->
         </div>
 
     </section>
