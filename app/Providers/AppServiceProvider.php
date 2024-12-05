@@ -31,11 +31,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Blade::directive('url', function ($path) {
-            return "<?php echo asset($path); ?>";
+            return "asset($path)";
         });
 
         URL::forceRootUrl('https://pandaidigital.id');
-            dd($path);
+            // dd($path);
 
          // Ambil data identitas website dari tabel Identitaswebsite
         $identitas = Identitaswebsite::first();
