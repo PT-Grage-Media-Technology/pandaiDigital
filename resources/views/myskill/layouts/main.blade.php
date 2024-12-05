@@ -6,7 +6,7 @@
     <meta name="description" content="Pandai Digital adalah platform pembelajaran online yang menyediakan akses ke berbagai materi untuk pengembangan keterampilan profesional.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    {{-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <link rel="icon" type="image/png" href="{{ 'https://pandaidigital.id/foto_identitas/' . $identitas->favicon }}">

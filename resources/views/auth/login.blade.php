@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    {{-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> --}}
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/logo.png') }}">
-  <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Login | Pandai Digital</title>
 
     <link rel="stylesheet" href="https://rawcdn.githack.com/ArvinoDel/myskillokodinas/1b91e323bc712ff7475df2def625938c0d2cfe3b/resources/css/appskill.css">

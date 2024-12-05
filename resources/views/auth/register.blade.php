@@ -7,7 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Sign Up | Pandai Digital</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/logo.png') }}">
-    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    {{-- <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> --}}
 
 
     <link rel="stylesheet"
