@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Response;
 class GeneratepdfController extends Controller
 {
     public function beri_nilai(Request $request){
+        try {
 
             $sertifikat = Sertifikat::where('id_sertifikat', $request->id_sertifikat)->first();
             $user = User::where('id', $sertifikat->id_user)->first();
@@ -66,5 +67,9 @@ class GeneratepdfController extends Controller
             Mail::to($data["email"])->send(new MailSertifikat($data));
 
             return redirect()->back()->with('success', 'Data Sertifikat Berhasil Diperbarui');
+
+        } catch (\Exception $e) {
+            Log::error('Gagal mengirim sertifikat: ' . $e->getMessage());
+        }
     }
 }
