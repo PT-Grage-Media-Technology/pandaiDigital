@@ -56,15 +56,6 @@ class AppServiceProvider extends ServiceProvider
             // 'favicon' => $favicon,
         ]);
 
-        if (env('APP_URL')) {
-            URL::forceRootUrl(env('APP_URL'));
-        }
-
-        // (Opsional) Jika perlu memastikan HTTPS
-        if (env('APP_ENV') === 'production') {
-            URL::forceScheme('https');
-        }
-
         // Share metode pembayaran dengan semua view
         View::composer('*', function ($view) {
             $metod = Metode::all();
