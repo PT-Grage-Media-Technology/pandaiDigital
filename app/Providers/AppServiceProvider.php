@@ -35,7 +35,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         URL::forceRootUrl('https://pandaidigital.id');
-            dd(URL::forceRootUrl('https://pandaidigital.id'));
+            dd($path);
 
          // Ambil data identitas website dari tabel Identitaswebsite
         $identitas = Identitaswebsite::first();
