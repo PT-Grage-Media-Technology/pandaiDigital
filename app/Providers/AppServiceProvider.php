@@ -12,6 +12,7 @@ use App\Models\Identitaswebsite;
 use App\Models\Logo;
 use Illuminate\Support\Facades\Blade;
 use App\Models\Popup;
+use Illuminate\Support\Facades\URL;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -54,6 +55,15 @@ class AppServiceProvider extends ServiceProvider
             'metod' => $metod,
             // 'favicon' => $favicon,
         ]);
+
+        if (env('APP_URL')) {
+            URL::forceRootUrl(env('APP_URL'));
+        }
+
+        // (Opsional) Jika perlu memastikan HTTPS
+        if (env('APP_ENV') === 'production') {
+            URL::forceScheme('https');
+        }
 
         // Share metode pembayaran dengan semua view
         View::composer('*', function ($view) {
