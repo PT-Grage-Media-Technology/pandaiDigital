@@ -209,10 +209,10 @@
 
     @php
 
-        $faviconPath = base_path('public_html/foto_identitas/' . $identitas->favicon);
-        $capPath = base_path('public_html/cap/' . $identitas->cap);
-        $ttdPath = base_path('public_html/foto_ttd/' . $identitas->ttd);
-        $ttdTrainer = base_path('public_html/ttd_trainer/' . $ttd_trainer);
+        $faviconPath = base_path('public/foto_identitas/' . $identitas->favicon);
+        $capPath = base_path('public/cap/' . $identitas->cap);
+        $ttdPath = base_path('public/foto_ttd/' . $identitas->ttd);
+        $ttdTrainer = base_path('public/ttd_trainer/' . $ttd_trainer);
 
         $faviconBase64 = file_exists($faviconPath)
             ? 'data:image/png;base64,' . base64_encode(file_get_contents($faviconPath))
