@@ -21,7 +21,7 @@
                                     <option value="{{ $status->status }}" {{ request('status') == $status->status ? 'selected' : '' }}>
                                         {{ $status->status }}
                                     </option>
-                                @endforeach  
+                                @endforeach
                             </select>
                             <div class="input-group-append">
                                 <button class="btn btn-outline-primary" type="submit">Filter</button>
@@ -59,7 +59,7 @@
                             <tr>
                                 <td>{{ $loop->iteration + $manajemenmodul->firstItem() - 1 }}</td>
                                 <td>{{ $modul->nama_modul }}</td>
-                                <td><a href="{{ $modul->link }}" target="_blank">	http://localhost/lokodinas/administrator/ {{ $modul->link }}</a></td>
+                                <td><a href="{{ $modul->link }}" target="_blank">	https://pandaidigital.id//lokodinas/administrator/ {{ $modul->link }}</a></td>
                                 <td>{{ $modul->publish }}</td>
                                 <td>{{ $modul->aktif }}</td>
                                 <td>{{ $modul->status }}</td>
@@ -153,7 +153,7 @@
                             });
                         }
                     });
-                } 
+                }
             });
         });
 

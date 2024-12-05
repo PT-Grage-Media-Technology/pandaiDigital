@@ -33,6 +33,8 @@ class AppServiceProvider extends ServiceProvider
         Blade::directive('url', function ($path) {
             return "<?php echo asset($path); ?>";
         });
+
+        URL::forceRootUrl('https://pandaidigital.id');
          // Ambil data identitas website dari tabel Identitaswebsite
         $identitas = Identitaswebsite::first();
 

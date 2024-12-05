@@ -96,7 +96,7 @@
                                     <small class="form-text text-muted">Biarkan kosong jika tidak ingin mengubah gambar.</small>
                                 </div>
                             </div>
-                        </td>  
+                        </td>
                     </tr>
                     <tr>
                         <th style="padding: 5px;">Ket. Gambar</th>
@@ -119,7 +119,7 @@
                                 @endforeach --}}
                                 @foreach($tags as $tag)
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="{{ $tag->tag_seo }}" id="tag{{ $tag->id_tag }}" name="tag[]"{{ in_array($tag->tag_seo, explode(',', $berita->tag)) ? ' checked' : ''; }}>
+                                    <input class="form-check-input" type="checkbox" value="{{ $tag->tag_seo }}" id="tag{{ $tag->id_tag }}" name="tag[]"{{ in_array($tag->tag_seo, explode(',', $berita->tag)) ? ' checked' : '' }}>
                                     <label class="form-check-label" for="tag{{ $tag->id_tag }}">
                                         {{ $tag->nama_tag }}
                                     </label>
