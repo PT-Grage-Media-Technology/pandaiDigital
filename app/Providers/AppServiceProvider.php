@@ -10,6 +10,7 @@ use App\Models\Metodepembayaran;
 use App\Models\Alamatkontak;
 use App\Models\Identitaswebsite;
 use App\Models\Logo;
+use Illuminate\Support\Facades\Blade;
 use App\Models\Popup;
 
 
@@ -28,16 +29,19 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Blade::directive('url', function ($path) {
+            return "<?php echo asset($path); ?>";
+        });
          // Ambil data identitas website dari tabel Identitaswebsite
         $identitas = Identitaswebsite::first();
-        
+
         $alamatkontak = Alamatkontak::first();
 
         // Ambil data logo terbaru dari tabel Logo
         $logo = Logo::orderBy('id_logo', 'DESC')->first();
-        
+
          $metod = Metode::all();
-        
+
         // $favicon = DB::select('SELECT favicon FROM identitas');
 
         $popups = Popup::with('trainer')->get();
@@ -50,16 +54,16 @@ class AppServiceProvider extends ServiceProvider
             'metod' => $metod,
             // 'favicon' => $favicon,
         ]);
-        
+
         // Share metode pembayaran dengan semua view
         View::composer('*', function ($view) {
             $metod = Metode::all();
         });
-        
+
         $this->app->bind('path.public', function() {
             return base_path().'/public_html';
         });
-        
+
         // Share latest messages dengan semua view
         View::composer('*', function ($view) {
             $pesanmasukController = new PesanmasukController();

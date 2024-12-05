@@ -44,11 +44,11 @@
                     @endif
 
                 </form>
-                
+
                 <form action="/administrator/manajemenuser/email" method="POST">
                     @csrf <!-- Token CSRF Laravel untuk keamanan -->
                     <!--@method('PUT') <!-- Laravel directive untuk mengubah metode menjadi PUT -->
-                    
+
                     <div class="d-flex">
                         @for($i = 0; $i < $countUsers; $i++)
                             <div>
@@ -57,7 +57,7 @@
                             </div>
                         @endfor
                     </div>
-                
+
                     <button type="submit" class="btn btn-primary">
                         Send Messages
                     </button>
@@ -95,17 +95,17 @@
                                 <td>
                                     @if ($user->foto != null)
                                     <img style='width:32px; height:32px'
-                                        src="{{ url('foto_user/' . $user->foto) }}">
+                                        src="{{ asset('foto_user/' . $user->foto) }}">
                                     @else
                                     <img style='width:32px; height:32px'
-                                        src="{{ url('foto_user/default.png') }}">
+                                        src="{{ asset('foto_user/default.png') }}">
                                     @endif
                                 </td>
                                 <td>{{ $user->blokir }}</td>
                                 <td>{{ $user->level }}</td>
 
                                 @php
-                                
+
                                     // Mengambil semua program_name untuk user tertentu
                                     $paketLangganan = App\Models\Payment::where('id_user', $user->id)->pluck('program_name');
                                 @endphp
