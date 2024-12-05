@@ -50,7 +50,7 @@ class GeneratepdfController extends Controller
 
                 // Buat nama file dan simpan ke public/sertifikat
                 $filename = 'sertifikat_' . Str::slug($user->nama_lengkap) . '_' . Str::slug($bootcamp->judul_bootcamp) . '.pdf';
-                $pdf->save(base_path('public_html/sertifikat/' . $filename));
+                $pdf->save(base_path('public/sertifikat/' . $filename));
 
 
                 $sertifikat->update([
