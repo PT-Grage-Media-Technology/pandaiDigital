@@ -48,7 +48,7 @@
 
         /* Inner white container */
         .inner-content {
-            background-image: url('../public_html/assets/bg-sertifikat.png');
+            background-image: url('../public/assets/bg-sertifikat.png');
             background-size: cover;
             width: 60rem;
             height: 33rem;
