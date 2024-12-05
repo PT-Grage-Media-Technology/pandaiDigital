@@ -34,7 +34,11 @@ class AppServiceProvider extends ServiceProvider
             return "<?php echo asset($path); ?>";
         });
 
+        $this->app['request']->server->set('HTTPS', true);
         URL::forceRootUrl('https://pandaidigital.id');
+        URL::forceScheme('https');
+            // dd($path);
+
          // Ambil data identitas website dari tabel Identitaswebsite
         $identitas = Identitaswebsite::first();
 

@@ -90,7 +90,6 @@
 </head>
 
 <body>
-    @if (Auth::check() && Auth::user()->level === 'admin')
 
   <!-- ======= Header ======= -->
   <header id="header" class="header d-flex align-items-center">
@@ -275,15 +274,6 @@
 
   <!-- Template Main JS File -->
   <script src="{{ url('template/UpCons/assets/js/main.js') }}"></script>
-  
-    @else
-        <script>
-            window.onload = function() {
-                // Redirect to a specific URL
-                window.location.href = "/login";
-            };
-        </script>
-    @endif
 </body>
 
 </html>
