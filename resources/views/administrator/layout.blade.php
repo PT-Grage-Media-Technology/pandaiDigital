@@ -30,9 +30,6 @@
 <body>
     @if (Auth::check())
         @if (Auth::user()->level === 'admin')
-            <?php
-            $paginator->setPath('https://pandaidigital.id');
-            ?>
 
             <nav class="sidenav navbar navbar-vertical fixed-left navbar-expand-xs navbar-light bg-white"
                 id="sidenav-main">
