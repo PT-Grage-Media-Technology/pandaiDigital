@@ -1,6 +1,10 @@
 @extends('administrator.layout')
 
 @section('content')
+<?php
+dd(config('app.url'));
+
+?>
 <div class="row">
     <div class="col">
         <div class="card card-shadow">
@@ -143,6 +147,7 @@
                     </table>
                     <br>
                     {{ $users->links('vendor.pagination.bootstrap-4') }}
+
                 </div>
             </div>
         </div>
