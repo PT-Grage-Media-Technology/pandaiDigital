@@ -1,6 +1,6 @@
 @if ($paginator->hasPages())
     <?php
-    $paginator->setPath('https://pandaidigital.id');
+    // $paginator->setPath('https://pandaidigital.id');
     ?>
 
     <ul class="pagination">
