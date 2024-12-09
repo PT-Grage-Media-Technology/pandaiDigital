@@ -209,19 +209,19 @@
 
     @php
 
-        $faviconPath = base_path('public/foto_identitas/' . $identitas->favicon);
-        $capPath = base_path('public/cap/' . $identitas->cap);
-        $ttdPath = base_path('public/foto_ttd/' . $identitas->ttd);
-        $ttdTrainer = base_path('public/ttd_trainer/' . $ttd_trainer);
+    $faviconPath = base_path('public/foto_identitas/' . $identitas->favicon);
+    $capPath = base_path('public/cap/' . $identitas->cap);
+    $ttdPath = base_path('public/foto_ttd/' . $identitas->ttd);
+    $ttdTrainer = base_path('public/ttd_trainer/' . $ttd_trainer);
 
-        $faviconBase64 = file_exists($faviconPath)
-            ? 'data:image/png;base64,' . base64_encode(file_get_contents($faviconPath))
-            : '';
-        $capBase64 = file_exists($capPath) ? 'data:image/png;base64,' . base64_encode(file_get_contents($capPath)) : '';
-        $ttdBase64 = file_exists($ttdPath) ? 'data:image/png;base64,' . base64_encode(file_get_contents($ttdPath)) : '';
-        $ttdTrainerBase64 = file_exists($ttdTrainer)
-            ? 'data:image/png;base64,' . base64_encode(file_get_contents($ttdTrainer))
-            : '';
+    $faviconBase64 = file_exists($faviconPath)
+    ? 'data:image/png;base64,' . base64_encode(file_get_contents($faviconPath))
+    : '';
+    $capBase64 = file_exists($capPath) ? 'data:image/png;base64,' . base64_encode(file_get_contents($capPath)) : '';
+    $ttdBase64 = file_exists($ttdPath) ? 'data:image/png;base64,' . base64_encode(file_get_contents($ttdPath)) : '';
+    $ttdTrainerBase64 = file_exists($ttdTrainer)
+    ? 'data:image/png;base64,' . base64_encode(file_get_contents($ttdTrainer))
+    : '';
     @endphp
 
 
@@ -233,8 +233,8 @@
 
             <div class="center-content">
                 @if ($faviconBase64)
-                    <img src="{{ $faviconBase64 }}" alt="Logo Pandai Digital" class="logo"
-                        style="width: 10vw; height: auto;">
+                <img src="{{ $faviconBase64 }}" alt="Logo Pandai Digital" class="logo"
+                    style="width: 86px; height: auto;">
                 @endif
                 <h2 class="title">Sertifikat Pandai Digital</h2>
                 <p class="sub-title">Dengan Bangga Diberikan Kepada:</p>
@@ -260,7 +260,7 @@
                         <td>
                             <div class="signature-box" style="margin-left: 100px">
                                 @if ($ttdTrainerBase64)
-                                    <img src="{{ $ttdTrainerBase64 }}" alt="Tanda Tangan" class="ttd">
+                                <img src="{{ $ttdTrainerBase64 }}" alt="Tanda Tangan" class="ttd">
                                 @endif
                                 <div class="signature-line"></div>
                                 <p class="signature-name" style="text-align: center;">{{ $nama_trainer }}</p>
@@ -279,10 +279,10 @@
                         <td>
                             <div class="signature-box ceo-signature" style="margin-left: 145px">
                                 @if ($capBase64)
-                                    <img src="{{ $capBase64 }}" alt="Cap" class="cap">
+                                <img src="{{ $capBase64 }}" alt="Cap" class="cap">
                                 @endif
                                 @if ($ttdBase64)
-                                    <img src="{{ $ttdBase64 }}" alt="Tanda Tangan" class="ttd">
+                                <img src="{{ $ttdBase64 }}" alt="Tanda Tangan" class="ttd">
                                 @endif
                                 <div class="signature-line"></div>
                                 <p class="signature-name">{{ $identitas->ceo }}</p>
